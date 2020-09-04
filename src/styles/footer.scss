@@ -1,0 +1,94 @@
+.footer {
+  background-color: var(--footerColor);
+  color: var(--lightTextColor);
+
+  .fa-copyright {
+    margin-right: 0.5rem;
+  }
+
+  .fa-comment-dots,
+  .fa-caret-up {
+    position: fixed;
+    bottom: 20px;
+    color: var(--blueColor);
+    font-size: 40px;
+    cursor: pointer;
+  }
+
+  .fa-comment-dots {
+    right: 20px;
+  }
+
+  .fa-caret-up {
+    left: 20px;
+  }
+
+  .close {
+    height: 20px;
+    width: 20px;
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      background-color: var(--lightTextColor);
+    }
+    &::before {
+      height: 100%;
+      width: 1px;
+      left: 50%;
+      transform: translateX(-50%) rotate(45deg);
+    }
+    &::after {
+      content: "";
+      height: 1px;
+      width: 100%;
+      top: 50%;
+      transform: translateY(-50%) rotate(45deg);
+    }
+    &_record {
+      z-index: 250;
+      position: fixed;
+      visibility: hidden;
+      top: 20px;
+      right: 0;
+      transition: all 0.5s;
+      &_active {
+        visibility: visible;
+        right: 470px;
+      }
+    }
+  }
+
+  .record {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    z-index: 200;
+    right: -500px;
+    height: 100vh;
+    width: 500px;
+    transition: all 0.5s;
+    box-shadow: 0 0 10px var(--shadowColor);
+    &_active {
+      right: 0;
+    }
+  }
+
+  .backDrop {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+  }
+}
+
+@media (max-width: 575px) {
+  .footer {
+    .record {
+      &_active {
+        width: 100%;
+      }
+    }
+  }
+}

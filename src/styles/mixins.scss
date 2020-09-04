@@ -1,0 +1,10 @@
+@mixin gridAutoTemplate($minWidth, $minHeight: 100px) {
+  display: grid;
+  grid-template: minmax($minHeight, auto) / repeat(auto-fit, minmax($minWidth, auto));
+  grid-auto-rows: minmax($minHeight, auto);
+}
+
+@mixin gridTemplate($rowsCount, $rowMinWidth, $colCount, $colWidth) {
+  display: grid;
+  grid-template: repeat($rowsCount, minmax($rowMinWidth, auto)) / repeat($colCount, minmax($colWidth, auto));
+}

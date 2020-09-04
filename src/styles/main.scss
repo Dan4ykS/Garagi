@@ -1,0 +1,39 @@
+@import "./variables.scss";
+@import "./reboot.scss";
+@import "./grid.scss";
+@import "./mixins.scss";
+@import "./flexWraps.scss";
+@import "./header.scss";
+@import "./about.scss";
+@import "./service.scss";
+@import "./contacts.scss";
+@import "./map.scss";
+@import "./footer.scss";
+
+.content {
+  max-width: 1200px;
+  height: 9000px;
+  margin: 0 auto;
+}
+
+.hiddenElement {
+  display: none;
+}
+
+@media (max-width: 992px) {
+  .content {
+    max-width: 960px;
+  }
+}
+
+@media (max-width: 768px) {
+  .content {
+    max-width: 720px;
+  }
+}
+
+@media (max-width: 575px) {
+  .content {
+    width: 100%;
+  }
+}
