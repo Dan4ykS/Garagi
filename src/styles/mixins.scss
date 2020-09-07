@@ -6,5 +6,5 @@
 
 @mixin gridTemplate($rowsCount, $rowMinWidth, $colCount, $colWidth) {
   display: grid;
-  grid-template: repeat($rowsCount, minmax($rowMinWidth, auto)) / repeat($colCount, minmax($colWidth, auto));
+  grid-template: repeat($rowsCount, minmax($rowMinWidth, auto)) / repeat($colCount, $colWidth);
 }

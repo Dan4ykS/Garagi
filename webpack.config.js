@@ -3,6 +3,7 @@ const htmlWebpackPlagin = require('html-webpack-plugin');
 const miniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCssAssetWebpackPlugin = require('optimize-css-assets-webpack-plugin');
 const TerserWebpackPlugin = require('terser-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = (env = {}) => {
@@ -27,20 +28,21 @@ module.exports = (env = {}) => {
   const getPlugins = () => {
     const plugins = [
       new htmlWebpackPlagin({
-        hash: true,
-        template: path.join(__dirname, 'src/index.html'),
-        // favicon: path.join(__dirname, './favicon.ico'),
+        template: './index.html',
         minify: {
           removeComments: isProd,
           collapseWhitespace: isProd,
         },
       }),
-      new CleanWebpackPlugin(),
     ];
     if (isProd) {
       plugins.push(
+        new CleanWebpackPlugin(),
         new miniCssExtractPlugin({
           filename: 'css/style-[hash:5].min.css',
+        }),
+        new CopyPlugin({
+          patterns: [{ from: './images', to: 'images' }],
         })
       );
     }
@@ -48,10 +50,10 @@ module.exports = (env = {}) => {
   };
 
   return {
+    context: path.join(__dirname, 'src'),
     mode: isProd ? 'production' : 'development',
     entry: {
-      // main: './src/index.ts',
-      react: path.join(__dirname, 'src/index.ts'),
+      main: './index.ts',
     },
     output: {
       filename: 'js/bundle-[hash:5].min.js',

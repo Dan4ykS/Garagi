@@ -8,5 +8,6 @@ window.addEventListener('DOMContentLoaded', () => {
     slider = new Slider(),
     footer = new Footer();
 
+  header.init();
   footer.init();
 });

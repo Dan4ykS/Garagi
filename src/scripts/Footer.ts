@@ -1,35 +1,38 @@
 import { findElement } from './utils';
 
 export default class Footer {
-  private $openSidebar: HTMLElement;
+  private $openSidebarIcon: HTMLElement;
+  private $openSidebarBtn: HTMLElement;
   private $sidebar: HTMLElement;
   private $backDrop: HTMLElement;
   private $upArrow: HTMLElement;
   private $closeSidebar: HTMLElement;
 
   constructor() {
-    this.$openSidebar = findElement('.fa-comment-dots');
+    this.$openSidebarIcon = findElement('.fa-comment-dots');
+    this.$openSidebarBtn = findElement('.greeting__btn');
     this.$sidebar = findElement('.record');
     this.$backDrop = findElement('.backDrop');
     this.$upArrow = findElement('.fa-caret-up');
     this.$closeSidebar = findElement('.close_record');
+    
     this.addListeners();
   }
 
-  public init() {
-    window.addEventListener('scroll', () => {
+  public init(): void {
+    window.addEventListener('scroll', () => {      
       if (scrollY > 150) {
-        this.$openSidebar.classList.remove('hiddenElement');
+        this.$openSidebarIcon.classList.remove('hiddenElement');
         this.$upArrow.classList.remove('hiddenElement');
       } else {
-        this.$openSidebar.classList.add('hiddenElement');
+        this.$openSidebarIcon.classList.add('hiddenElement');
         this.$upArrow.classList.add('hiddenElement');
       }
     });
   }
 
   private addListeners(): void {
-    [this.$openSidebar, this.$backDrop, this.$closeSidebar].forEach((el) => {
+    [this.$openSidebarIcon, this.$backDrop, this.$closeSidebar, this.$openSidebarBtn].forEach((el) => {
       el.addEventListener('click', () => {
         this.toggleSidebar();
         this.toggleBackDrop();

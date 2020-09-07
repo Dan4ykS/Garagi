@@ -30,6 +30,8 @@
   align-items: center;
   &_FS,
   &_FE,
+  &_SB,
+  &_SA,
   &_center {
     display: flex;
     align-items: center;
@@ -40,6 +42,12 @@
   }
   &_FE {
     justify-content: flex-end;
+  }
+  &_SB {
+    justify-content: space-between;
+  }
+  &_SA {
+    justify-content: space-around;
   }
   &_center {
     justify-content: center;

@@ -2,17 +2,25 @@
 @import "./reboot.scss";
 @import "./grid.scss";
 @import "./mixins.scss";
+@import "./animations.scss";
+@import "./buttons.scss";
 @import "./flexWraps.scss";
 @import "./header.scss";
+@import "./greeting.scss";
 @import "./about.scss";
 @import "./service.scss";
+@import "./team.scss";
+@import "./gallery.scss";
 @import "./contacts.scss";
 @import "./map.scss";
 @import "./footer.scss";
 
-.content {
+body {
+  background-color: var(--mainBgColor);
+}
+
+.contentWrapper {
   max-width: 1200px;
-  height: 9000px;
   margin: 0 auto;
 }
 
@@ -21,19 +29,19 @@
 }
 
 @media (max-width: 992px) {
-  .content {
+  .contentWrapper {
     max-width: 960px;
   }
 }
 
 @media (max-width: 768px) {
-  .content {
+  .contentWrapper {
     max-width: 720px;
   }
 }
 
 @media (max-width: 575px) {
-  .content {
+  .contentWrapper {
     width: 100%;
   }
 }
