@@ -5,22 +5,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Барбершоп "Гаражи"</title>
-  <link rel="apple-touch-icon" sizes="57x57" href="src/images/favicon/apple-icon-57x57.png">
-  <link rel="apple-touch-icon" sizes="60x60" href="src/images/favicon/apple-icon-60x60.png">
-  <link rel="apple-touch-icon" sizes="72x72" href="src/images/favicon/apple-icon-72x72.png">
-  <link rel="apple-touch-icon" sizes="76x76" href="src/images/faviconapple-icon-76x76.png">
-  <link rel="apple-touch-icon" sizes="114x114" href="src/images/favicon/apple-icon-114x114.png">
-  <link rel="apple-touch-icon" sizes="120x120" href="src/images/favicon/apple-icon-120x120.png">
-  <link rel="apple-touch-icon" sizes="144x144" href="src/images/favicon/apple-icon-144x144.png">
-  <link rel="apple-touch-icon" sizes="152x152" href="src/images/favicon/apple-icon-152x152.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="src/images/favicon/apple-icon-180x180.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="src/images/favicon/android-icon-192x192.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="src/images/favicon/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="96x96" href="src/images/favicon/favicon-96x96.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="src/images/favicon/favicon-16x16.png">
-  <link rel="manifest" href="src/images/favicon/manifest.json">
+  <link rel="apple-touch-icon" sizes="57x57" href="images/favicon/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="images/favicon/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="images/favicon/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="images/faviconapple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="images/favicon/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="images/favicon/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="images/favicon/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="images/favicon/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="images/favicon/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="images/favicon/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+  <link rel="manifest" href="images/favicon/manifest.json">
   <meta name="msapplication-TileColor" content="#ffffff">
-  <meta name="msapplication-TileImage" content="src/images/favicon/ms-icon-144x144.png">
+  <meta name="msapplication-TileImage" content="images/favicon/ms-icon-144x144.png">
   <meta name="theme-color" content="#ffffff">
   <script src="https://kit.fontawesome.com/b0f9da5b95.js" crossorigin="anonymous"></script>
 </head>
@@ -34,7 +34,7 @@
         <a data-to="team">Наша команда</a>
       </div>
       <div class="header__item header__logo">
-        <img src="src/images/favicon/ms-icon-150x150.png" alt="icon">
+        <img src="images/favicon/ms-icon-150x150.png" alt="icon">
       </div>
       <div class="header__item flexWrap">
         <a data-to="gallery">Фотографии</a>
@@ -53,7 +53,7 @@
     </nav>
   </header>
   <div class="greeting flexWrapColumn_center">
-    <div class="greeting__title">Гаражи</div>
+    <h1 class="greeting__title fadeInUp animated">Барбершоп "Гаражи"</h1>
     <div class="greeting__contacts fadeInUp animated">
       <p>Фурамнова, 55, Екатеринбург</p>
       <a href="tel:+7 (982) 632-02-02">+7 (982) 632-02-02</a>
@@ -62,10 +62,113 @@
   </div>
   <div class="contentWrapper">
     <section class="about">
-      <h2>О нас</h2>
+      <div class="about__info flexWrap_SB">
+        <div class="location">
+          <i class="fas fa-map-marker-alt"></i>
+          <p>Мы ждём вас по адресу</p>
+          <p>Фурманова 55, Екатеринбург</p>
+        </div>
+        <div class="time">
+          <i class="far fa-clock"></i>
+          <p>10:00 – 22:00,</p>
+          <p>без выходных</p>
+        </div>
+        <div class="phone">
+          <i class="fas fa-phone"></i>
+          <p>Телефон:</p>
+          <p>+7 (982) 632-02-02</p>
+        </div>
+      </div>
+      <div class="about__detail">
+        <img src="images/about/owner.jpg" alt="Владелец">
+
+        <div class="flexWrapColumn_center">
+          <h2>О нас</h2>
+          <p>
+            Приветствуем каждого нового гостя на просторах интернета! <br /><br />
+            Мы уверенны,что ты попал сюда неспроста! Ждем
+            тебя в
+            самом кайфовом барбершопе города за качественными стрижками!
+          </p>
+        </div>
+      </div>
     </section>
     <section class="service">
-      <h2>Услуги</h2>
+      <h2>Наши услуги</h2>
+      <p class="service__info">Мы создаем простые и стильные мужские прически, делаем нашу работу хорошо и быстро. Познакомьтесь с нашими
+        услугами подробнее.</p>
+      <div class="service__content">
+        <div class="service__item fadeInUp animated">
+          <div class="time">60 мин</div>
+          <div class="info flexWrap_SB">
+            <p>Стрижка мастера</p>
+            <p>600 <i class="fas fa-ruble-sign"></i></p>
+          </div>
+        </div>
+        <div class="service__item fadeInUp animated">
+          <div class="time">60 мин</div>
+          <div class="info flexWrap_SB">
+            <p>Стрижка проф мастера</p>
+            <p>800 <i class="fas fa-ruble-sign"></i></p>
+          </div>
+        </div>
+        <div class="service__item fadeInUp animated">
+          <div class="time">60 мин</div>
+          <div class="info flexWrap_SB">
+            <p>Оформление бороды</p>
+            <p>500 <i class="fas fa-ruble-sign"></i></p>
+          </div>
+        </div>
+        <div class="service__item fadeInUp animated">
+          <div class="time">90 мин</div>
+          <div class="info flexWrap_SB">
+            <p>Оформление бороды + стрижка у мастера</p>
+            <p>1000 <i class="fas fa-ruble-sign"></i></p>
+          </div>
+        </div>
+        <div class="service__item fadeInUp animated">
+          <div class="time">90 мин</div>
+          <div class="info flexWrap_SB">
+            <p>Оформление бороды + стрижка у проф мастера</p>
+            <p>1200 <i class="fas fa-ruble-sign"></i></p>
+          </div>
+        </div>
+        <div class="service__item fadeInUp animated">
+          <div class="time">60 мин</div>
+          <div class="info flexWrap_SB">
+            <p>Детская стрижка до 13 лет</p>
+            <p>400 <i class="fas fa-ruble-sign"></i></p>
+          </div>
+        </div>
+        <div class="service__item fadeInUp animated">
+          <div class="time">30 мин</div>
+          <div class="info flexWrap_SB">
+            <p>Удаление волос из носаа</p>
+            <p>100 <i class="fas fa-ruble-sign"></i></p>
+          </div>
+        </div>
+        <div class="service__item fadeInUp animated">
+          <div class="time">30 мин</div>
+          <div class="info flexWrap_SB">
+            <p>Уход (маска + скраб)</p>
+            <p>500 <i class="fas fa-ruble-sign"></i></p>
+          </div>
+        </div>
+        <div class="service__item fadeInUp animated">
+          <div class="time">30 мин</div>
+          <div class="info flexWrap_SB">
+            <p>Массаж</p>
+            <p>200 <i class="fas fa-ruble-sign"></i></p>
+          </div>
+        </div>
+        <div class="service__item fadeInUp animated">
+          <div class="time">60 мин</div>
+          <div class="info flexWrap_SB">
+            <p>Коррекция бровей</p>
+            <p>Бесплатно!</p>
+          </div>
+        </div>
+      </div>
     </section>
     <section class="team">
       <h2>Команда</h2>

@@ -18,6 +18,14 @@
 body {
   background-color: var(--mainBgColor);
 }
+ 
+section {
+  margin-top: 80px;
+}
+
+h2 {
+  font-size: 40px;
+}
 
 .contentWrapper {
   max-width: 1200px;

@@ -1,23 +1,25 @@
-import { findElement, findAllElements } from './utils';
+import { findElement, findAllElements, createObserver } from './utils';
 
 export default class Header {
   private $header: HTMLElement;
   private $navLink: NodeListOf<HTMLElement>;
-  private $mobileNavaLinl: NodeListOf<HTMLElement>;
   private $hamburger: HTMLElement;
   private $mobileMenu: HTMLElement;
   private headerHeight: number;
+  private platform: 'mobile' | 'desctop';
 
   constructor() {
     this.$header = findElement('.header');
     this.$navLink = findAllElements('.header__item a');
-    this.$mobileNavaLinl = findAllElements('.header__menu a');
     this.$hamburger = findElement('.header__humburger');
     this.$mobileMenu = findElement('.header__menu');
-    if (window.screen.width > 575) {
+    this.platform = window.screen.width > 575 ? 'desctop' : 'mobile';
+    if (this.platform === 'desctop') {
       this.headerHeight = +getComputedStyle(findElement(':root')).getPropertyValue('--headerHeight').split('px')[0];
+      this.$navLink = findAllElements('.header__item a');
     } else {
       this.headerHeight = +getComputedStyle(findElement(':root')).getPropertyValue('--headerHeightMobile').split('px')[0];
+      this.$navLink = findAllElements('.header__menu a');
     }
 
     this.addListeners();
@@ -36,24 +38,21 @@ export default class Header {
 
   private initNavigation(): void {
     const sections = findAllElements('section'),
-      observer = new IntersectionObserver(
-        (elements, observer) => {
-          this.clearActive();
-          elements.forEach((elem) => {
-            if (elem.intersectionRatio > 0.8) {
-              const sectionClass = elem.target.className;
-              this.addActive(sectionClass);
-            }
-          });
-        },
-        { root: null, rootMargin: '90px', threshold: 0.8 }
-      );
+      observer = createObserver((elements, observer) => {
+        this.clearActive();
+        elements.forEach((elem) => {          
+          if (elem.intersectionRatio > 0.7) {
+            const sectionClass = elem.target.className;
+            this.addActive(sectionClass);
+          }
+        });
+      });
 
     sections.forEach((section) => observer.observe(section));
   }
 
   private addListeners(): void {
-    [...this.$navLink, ...this.$mobileNavaLinl].forEach((link) => {
+    this.$navLink.forEach((link) => {
       link.addEventListener('click', (e) => {
         const element = e.target as HTMLElement,
           classToScroll = element.dataset['to'],
@@ -75,11 +74,11 @@ export default class Header {
   }
 
   private clearActive(): void {
-    [...this.$navLink, ...this.$mobileNavaLinl].forEach((link) => link.classList.remove('header__item_active'));
+    this.$navLink.forEach((link) => link.classList.remove('header__item_active'));
   }
 
   private addActive(section: string): void {
-    [...this.$navLink, ...this.$mobileNavaLinl].forEach((link) => {
+    this.$navLink.forEach((link) => {
       if (link.dataset['to'] === section) {
         link.classList.add('header__item_active');
       }
@@ -87,9 +86,11 @@ export default class Header {
   }
 
   private scrollToElem(selector: string): void {
-    const scrollHeight = findElement(`.${selector}`).getBoundingClientRect()['top'] + pageYOffset;
+    const scrollHeight = findElement(`.${selector}`).getBoundingClientRect()['top'] + pageYOffset,
+      offsetFormTop = scrollHeight - (this.headerHeight + (this.platform === 'desctop' ? 50 : 0));
+
     window.scrollTo({
-      top: scrollHeight - this.headerHeight,
+      top: offsetFormTop,
       behavior: 'smooth',
     });
   }

@@ -4,19 +4,19 @@
   color: var(--darkTextColor);
   text-align: center;
   user-select: none;
-  // background-color: $mainColor;
+  background-color: var(--mainBgColor);
   border: 1px solid transparent;
   border-radius: 15px;
   padding: 0.385rem 0.75rem;
   font-size: inherit;
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 15px var(--btnShadowColor);
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
     box-shadow 0.15s ease-in-out;
   cursor: pointer;
   &:hover {
-    background: #2ee59d;
-    box-shadow: 0 15px 20px rgba(46, 229, 157, 0.4);
-    color: white;
+    background: var(--btnBgHoverColor);
+    box-shadow: 0 15px 20px var(--btnShadowHoverColor);
+    color: var(--mainBgColor);
   }
   &:focus {
     outline: 0;

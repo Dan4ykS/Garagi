@@ -16,4 +16,12 @@ export const findAllElements = (selector: string): NodeListOf<HTMLElement> => {
   }
 };
 
-export const createElement = (selector: string): HTMLElement => document.createElement(selector);
+export const createObserver = (
+  callback: (elements: IntersectionObserverEntry[], observer: IntersectionObserver) => void
+): IntersectionObserver =>
+  new IntersectionObserver(
+    (elements, observer) => {
+      callback(elements, observer);
+    },
+    { root: null, rootMargin: '90px', threshold: 0.7 }
+  );

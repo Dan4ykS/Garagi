@@ -1,3 +1,28 @@
 .about {
-  height: 1000px;
+  &__info {
+    text-align: center;
+    p {
+      margin: 10px;
+    }
+    i {
+      font-size: 50px;
+    }
+  }
+  &__detail{
+    margin-top: 50px;
+    display: flex;
+    img {
+      width: 60%;
+    }
+    div {
+      padding: 40px;
+      width: 40%;
+      h2 {
+        text-align: left;
+      }
+      p {
+        text-align: left;
+      }
+    }
+  }
 }
