@@ -24,6 +24,7 @@
     }
     a {
       color: var(--lightTextColor);
+      position: relative;
       &::before {
         content: "";
         position: absolute;
@@ -37,7 +38,7 @@
       }
       &:hover {
         &::before {
-          width: 60%;
+          width: 100%;
         }
       }
     }
@@ -47,9 +48,13 @@
 @media (max-width: 575px) {
   .greeting {
     font-size: 20px;
-    
     &__title {
       font-size: 50px;
+    }
+    &__contacts {
+      &::before {
+        content: none;
+      }
     }
   }
 }
