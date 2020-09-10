@@ -19,13 +19,13 @@ export default class Header {
     if (this.platform === 'desctop') {
       this.headerHeight = +getComputedStyle(findElement(':root')).getPropertyValue('--headerHeight').split('px')[0];
       this.$navLink = findAllElements('.header__item a');
+      this.initNavigation();
     } else {
       this.headerHeight = +getComputedStyle(findElement(':root')).getPropertyValue('--headerHeightMobile').split('px')[0];
       this.$navLink = findAllElements('.header__menu a');
     }
 
     this.addListeners();
-    this.initNavigation();
   }
 
   public init(): void {

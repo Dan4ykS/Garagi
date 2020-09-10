@@ -60,13 +60,12 @@
   }
 
   .record {
+    z-index: 200;
     position: fixed;
     top: 0;
-    bottom: 0;
-    z-index: 200;
     right: -500px;
-    height: 100vh;
     width: 500px;
+    height: 100%;
     transition: all 0.5s;
     box-shadow: 0 0 10px var(--shadowColor);
     &_active {
@@ -85,17 +84,19 @@
 
 @media (max-width: 575px) {
   .footer {
-
-    .fa-comment-dots, .fa-caret-up {
+    .fa-comment-dots,
+    .fa-caret-up {
       font-size: 35px;
     }
-    .fa-comment-dots {
-    right: 20px;
-  }
 
-  .fa-caret-up {
-    left: 20px;
-  }
+    .fa-comment-dots {
+      right: 20px;
+    }
+
+    .fa-caret-up {
+      left: 20px;
+    }
+
     .record {
       &_active {
         width: 100%;

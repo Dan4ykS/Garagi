@@ -36,12 +36,5 @@
     &__title {
       font-size: 50px;
     }
-    &__contacts {
-      a {
-        &::before {
-          content: none;
-        }
-      }
-    }
   }
 }
