@@ -11,7 +11,7 @@
       a {
         color: var(--darkTextColor);
         position: relative;
-        @include linkUnderline(var(--darkTextColor));
+        @include underline(var(--darkTextColor));
       }
     }
   }
@@ -47,6 +47,9 @@
       }
       i {
         font-size: 30px;
+      }
+      p {
+        margin: 5px;
       }
     }
     &__detail {

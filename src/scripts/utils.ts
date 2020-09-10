@@ -23,5 +23,5 @@ export const createObserver = (
     (elements, observer) => {
       callback(elements, observer);
     },
-    { root: null, rootMargin: '0px', threshold: 0.5 }
+    { root: null, rootMargin: '0px', threshold: 0.6 }
   );

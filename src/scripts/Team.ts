@@ -5,10 +5,11 @@ export default class Team {
 
   constructor() {
     this.teamContentItems = findAllElements('.team__content .item');
-    this.addListeners();
   }
 
-  public init(): void {}
+  public init(): void {
+    this.addListeners();
+  }
 
   private addListeners(): void {
     this.teamContentItems.forEach((item) => {

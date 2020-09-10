@@ -4,10 +4,11 @@ export default class Contacts {
   private socialIcons: NodeListOf<HTMLElement>;
   constructor() {
     this.socialIcons = findAllElements('.contacts__social .fab');
-    this.addListeners();
   }
 
-  public init(): void {}
+  public init(): void {
+    this.addListeners();
+  }
 
   private addListeners(): void {
     this.socialIcons.forEach((icon, index) => {

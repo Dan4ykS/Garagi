@@ -58,6 +58,22 @@
   animation-name: bounceInUp;
 }
 
+@keyframes heartbeat {
+  from {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  to {
+    transform: scale(1)
+  }
+}
+
+.heartbeat {
+  animation: heartbeat 1.5s linear infinite;
+}
+
 .animated {
   animation-duration: 1.5s;
 }

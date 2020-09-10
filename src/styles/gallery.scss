@@ -1,4 +1,45 @@
 .gallery {
-  height: 1000px;
+  h2 {
+    margin-bottom: 40px;
+  }
+  .slider {
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+    &__track {
+      display: flex;
+      transition: all 0.5s;
+    }
+    &__item {
+      min-width: 600px;
+      padding: 0 40px;
+      img {
+        height: 750px;
+      }
+    }
+    &__nextBtn,
+    &__prevBtn {
+      position: absolute;
+      font-size: 40px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    &__nextBtn {
+      right: 0;
+    }
+    &__prevBtn {
+      left: 0;
+    }
+  }
+}
 
+@media (max-width: 575px) {
+  .slider { 
+    &__item {
+      min-width: 360px !important;
+      img {
+        height: 300px !important;
+      }
+    }
+  }
 }

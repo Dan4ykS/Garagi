@@ -9,7 +9,7 @@
   grid-template: repeat($rowsCount, minmax($rowMinWidth, auto)) / repeat($colCount, $colWidth);
 }
 
-@mixin linkUnderline($color :var(--linkHoverColor)) {
+@mixin underline($color: var(--linkHoverColor)) {
   &::before {
     content: "";
     position: absolute;

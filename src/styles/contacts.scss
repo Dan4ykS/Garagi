@@ -4,7 +4,8 @@
 
   &__address,
   &__phone,
-  &__social {
+  &__social,
+  &__invite {
     margin-top: 25px;
   }
 
@@ -12,8 +13,21 @@
     a {
       color: var(--darkTextColor);
       position: relative;
-      @include linkUnderline(var(--borderColor));
+      @include underline(var(--borderColor));
     }
+  }
+
+  &__img {
+    margin-top: 40px;
+    padding: 1rem;
+    border: 3px solid var(--borderColor);
+    img {
+      border-radius: 15px;
+    }
+  }
+
+  .fa-heart {
+    color: red;
   }
 
   &__social {
@@ -32,8 +46,15 @@
 
 @media (max-width: 575px) {
   .contacts {
-    &__phone, &__address, &__time {
+    &__phone,
+    &__address,
+    &__time {
       font-size: 20px;
-      }
+    }
+
+    &__img {
+    padding: 0.5rem;
+      margin: 30px 10px;
+    }
   }
 }

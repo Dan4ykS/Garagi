@@ -24,11 +24,10 @@ export default class Header {
       this.headerHeight = +getComputedStyle(findElement(':root')).getPropertyValue('--headerHeightMobile').split('px')[0];
       this.$navLink = findAllElements('.header__menu a');
     }
-
-    this.addListeners();
   }
 
   public init(): void {
+    this.addListeners();
     window.addEventListener('scroll', () => {
       if (scrollY > this.headerHeight) {
         this.$header.classList.add('header_active');
@@ -45,7 +44,7 @@ export default class Header {
       observer = createObserver((elements, observer) => {
         this.clearActive();
         elements.forEach((elem) => {
-          if (elem.intersectionRatio > 0.5) {
+          if (elem.intersectionRatio > 0.6) {
             const sectionClass = elem.target.className;
             this.addActive(sectionClass);
           }

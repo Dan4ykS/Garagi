@@ -15,12 +15,11 @@ export default class Footer {
     this.$backDrop = findElement('.backDrop');
     this.$upArrow = findElement('.fa-caret-up');
     this.$closeSidebar = findElement('.close_record');
-    
-    this.addListeners();
   }
 
   public init(): void {
-    window.addEventListener('scroll', () => {      
+    this.addListeners();
+    window.addEventListener('scroll', () => {
       if (scrollY > 150) {
         this.$openSidebarIcon.classList.remove('hiddenElement');
         this.$upArrow.classList.remove('hiddenElement');
