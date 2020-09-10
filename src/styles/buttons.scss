@@ -26,3 +26,9 @@
     color: var(--lightTextColor);
   }
 }
+
+@media (max-width: 575px) {
+.btn {
+  font-size: 18px;
+}
+}

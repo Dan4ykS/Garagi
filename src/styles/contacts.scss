@@ -11,7 +11,8 @@
   &__phone {
     a {
       color: var(--darkTextColor);
-      @include linkUnderline;
+      position: relative;
+      @include linkUnderline(var(--borderColor));
     }
   }
 
@@ -26,5 +27,13 @@
     .fa-instagram {
       margin-left: 40px;
     }
+  }
+}
+
+@media (max-width: 575px) {
+  .contacts {
+    &__phone, &__address, &__time {
+      font-size: 20px;
+      }
   }
 }

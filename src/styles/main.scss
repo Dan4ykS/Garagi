@@ -1,6 +1,5 @@
 @import "./variables.scss";
 @import "./reboot.scss";
-@import "./grid.scss";
 @import "./mixins.scss";
 @import "./animations.scss";
 @import "./buttons.scss";
@@ -60,5 +59,11 @@ h2 {
 @media (max-width: 575px) {
   .contentWrapper {
     width: 100%;
+  }
+  body {
+    font-size: 15px
+  }
+  h2 {
+    font-size: 25px;
   }
 }

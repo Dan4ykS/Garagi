@@ -39,3 +39,27 @@
     }
   }
 }
+
+@media (max-width: 575px) {
+  .service {
+    &__item {
+      padding: 0.3rem 0.7rem;
+      font-size: 20px;
+      .time {
+        font-size: 12px;
+      }
+      .info {
+        p {
+          &:first-child {
+            width: 80%;
+          }
+        }
+      }
+      p {
+        .fa-ruble-sign {
+          font-size: 15px;
+        }
+      }
+    }
+  }
+}

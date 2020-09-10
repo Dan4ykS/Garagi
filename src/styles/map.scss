@@ -1,3 +1,9 @@
 .map {
   margin-bottom: 50px;
 }
+
+@media (max-width: 575px) {
+  iframe {
+    height: 700px;
+  }
+}

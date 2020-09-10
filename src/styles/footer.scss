@@ -85,6 +85,17 @@
 
 @media (max-width: 575px) {
   .footer {
+
+    .fa-comment-dots, .fa-caret-up {
+      font-size: 35px;
+    }
+    .fa-comment-dots {
+    right: 20px;
+  }
+
+  .fa-caret-up {
+    left: 20px;
+  }
     .record {
       &_active {
         width: 100%;

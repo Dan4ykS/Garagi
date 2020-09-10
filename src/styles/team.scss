@@ -61,3 +61,20 @@
     }
   }
 }
+
+@media (max-width: 575px) {
+  .team {
+    &__content {
+      @include gridTemplate(4, 300px, 1, 335px);
+      justify-content: center;
+      grid-template-areas: "administrator" "proMaster" "master1" "master2";
+      .item {
+        &__info {
+          left: -15px;
+          right: -15px;
+          bottom: -20px
+        }
+      }
+    }
+  }
+}
