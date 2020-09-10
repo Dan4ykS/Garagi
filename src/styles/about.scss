@@ -10,6 +10,8 @@
     .phone {
       a {
         color: var(--darkTextColor);
+        position: relative;
+        @include linkUnderline(var(--darkTextColor));
       }
     }
   }
