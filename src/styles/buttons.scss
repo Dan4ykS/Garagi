@@ -21,4 +21,8 @@
   &:focus {
     outline: 0;
   }
+  &-dark {
+    background-color:  var(--darkTextColor);
+    color: var(--lightTextColor);
+  }
 }

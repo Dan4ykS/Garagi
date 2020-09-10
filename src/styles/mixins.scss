@@ -8,3 +8,22 @@
   display: grid;
   grid-template: repeat($rowsCount, minmax($rowMinWidth, auto)) / repeat($colCount, $colWidth);
 }
+
+@mixin linkUnderline {
+  &::before {
+    content: "";
+    position: absolute;
+    height: 1px;
+    left: 0;
+    width: 0;
+    bottom: 0;
+    background-color: var(--linkHoverColor);
+    transition: all 0.5s;
+    border-radius: 15px;
+  }
+  &:hover {
+    &::before {
+      width: 100%;
+    }
+  }
+}

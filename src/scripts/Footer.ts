@@ -1,8 +1,8 @@
-import { findElement } from './utils';
+import { findElement, findAllElements } from './utils';
 
 export default class Footer {
   private $openSidebarIcon: HTMLElement;
-  private $openSidebarBtn: HTMLElement;
+  private $openSidebarBtns: NodeListOf<HTMLElement>;
   private $sidebar: HTMLElement;
   private $backDrop: HTMLElement;
   private $upArrow: HTMLElement;
@@ -10,7 +10,7 @@ export default class Footer {
 
   constructor() {
     this.$openSidebarIcon = findElement('.fa-comment-dots');
-    this.$openSidebarBtn = findElement('.greeting__btn');
+    this.$openSidebarBtns = findAllElements('.btn');
     this.$sidebar = findElement('.record');
     this.$backDrop = findElement('.backDrop');
     this.$upArrow = findElement('.fa-caret-up');
@@ -32,7 +32,7 @@ export default class Footer {
   }
 
   private addListeners(): void {
-    [this.$openSidebarIcon, this.$backDrop, this.$closeSidebar, this.$openSidebarBtn].forEach((el) => {
+    [this.$openSidebarIcon, this.$backDrop, this.$closeSidebar, ...this.$openSidebarBtns].forEach((el) => {
       el.addEventListener('click', () => {
         this.toggleSidebar();
         this.toggleBackDrop();

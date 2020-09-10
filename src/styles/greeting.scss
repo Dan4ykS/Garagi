@@ -25,22 +25,7 @@
     a {
       color: var(--lightTextColor);
       position: relative;
-      &::before {
-        content: "";
-        position: absolute;
-        height: 1px;
-        left: 0;
-        width: 0;
-        bottom: 0;
-        background-color: var(--linkHoverColor);
-        transition: all 0.5s;
-        border-radius: 15px;
-      }
-      &:hover {
-        &::before {
-          width: 100%;
-        }
-      }
+      @include linkUnderline;
     }
   }
 }
@@ -52,8 +37,10 @@
       font-size: 50px;
     }
     &__contacts {
-      &::before {
-        content: none;
+      a {
+        &::before {
+          content: none;
+        }
       }
     }
   }

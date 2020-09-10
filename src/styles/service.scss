@@ -1,22 +1,25 @@
 .service {
-  h2 {
-    text-align: center;
-  }
   &__info {
     text-align: center;
     max-width: 600px;
-    margin: 0  auto;
+    margin: 0 auto;
   }
+
   &__content {
     max-width: 900px;
     margin: 0 auto;
     margin-top: 40px;
     font-size: 30px;
   }
+
   &__item {
+    visibility: hidden;
     padding: 0.3rem 1rem;
     border-bottom: 2px solid var(--borderColor);
     margin-bottom: 50px;
+    &_active {
+      visibility: visible;
+    }
     &:last-child {
       margin-bottom: 0;
     }
@@ -24,8 +27,15 @@
       font-size: 15px;
       font-weight: 700;
     }
-    p{
+    p {
       margin: 0;
+    }
+  }
+
+  .btn {
+    visibility: hidden;
+    &_active {
+      visibility: visible;
     }
   }
 }

@@ -1,3 +1,63 @@
 .team {
-  height: 1000px;
+  &__introduce {
+    text-align: center;
+  }
+
+  &__content {
+    margin-top: 50px;
+    @include gridTemplate(2, 300px, 3, 380px);
+    grid-template-areas: "administrator proMaster master1" ". master2 .";
+    justify-content: space-between;
+    grid-row-gap: 20px;
+    .item {
+      padding: 0.8rem;
+      border: 2px solid var(--borderColor);
+      border-radius: 15px;
+      position: relative;
+
+      &:first-child {
+        grid-area: administrator;
+      }
+      &:nth-child(2) {
+        grid-area: proMaster;
+      }
+      &:nth-child(3) {
+        grid-area: master1;
+      }
+      &:last-child {
+        grid-area: master2;
+      }
+      &__img {
+        border-radius: 15px;
+        transition: all 0.2s;
+        &_onMouseEnter {
+          transform: scale(1.2);
+        }
+      }
+      &__info {
+        position: absolute;
+        visibility: hidden;
+        border-bottom-left-radius: 15px;
+        border-bottom-right-radius: 15px;
+        bottom: -25px;
+        left: -20px;
+        right: -20px;
+        height: 0;
+        background-color: var(--shadowColor);
+        color: var(--lightTextColor);
+        transition: visibility linear 0.1s, height ease-out 0.3s;
+        .name {
+          font-size: 30px;
+        }
+        .position {
+          font-size: 16px;
+          margin-top: 10px;
+        }
+        &_active {
+          visibility: visible;
+          height: 30%;
+        }
+      }
+    }
+  }
 }

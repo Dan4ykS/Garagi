@@ -1,4 +1,30 @@
 .contacts {
-  height: 1000px;
+  text-align: center;
+  font-size: 25px;
 
+  &__address,
+  &__phone,
+  &__social {
+    margin-top: 25px;
+  }
+
+  &__phone {
+    a {
+      color: var(--darkTextColor);
+      @include linkUnderline;
+    }
+  }
+
+  &__social {
+    font-size: 35px;
+    .fab {
+      transition: all 0.2s;
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+    .fa-instagram {
+      margin-left: 40px;
+    }
+  }
 }

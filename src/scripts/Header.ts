@@ -6,6 +6,7 @@ export default class Header {
   private $hamburger: HTMLElement;
   private $mobileMenu: HTMLElement;
   private headerHeight: number;
+  private greetingHeight: number;
   private platform: 'mobile' | 'desctop';
 
   constructor() {
@@ -13,6 +14,7 @@ export default class Header {
     this.$navLink = findAllElements('.header__item a');
     this.$hamburger = findElement('.header__humburger');
     this.$mobileMenu = findElement('.header__menu');
+    this.greetingHeight = +findElement('.greeting').offsetHeight;
     this.platform = window.screen.width > 575 ? 'desctop' : 'mobile';
     if (this.platform === 'desctop') {
       this.headerHeight = +getComputedStyle(findElement(':root')).getPropertyValue('--headerHeight').split('px')[0];
@@ -30,6 +32,8 @@ export default class Header {
     window.addEventListener('scroll', () => {
       if (scrollY > this.headerHeight) {
         this.$header.classList.add('header_active');
+      } else if (screenY < this.greetingHeight) {
+        this.clearActive();
       } else {
         this.$header.classList.remove('header_active');
       }
@@ -40,8 +44,8 @@ export default class Header {
     const sections = findAllElements('section'),
       observer = createObserver((elements, observer) => {
         this.clearActive();
-        elements.forEach((elem) => {          
-          if (elem.intersectionRatio > 0.7) {
+        elements.forEach((elem) => {
+          if (elem.intersectionRatio > 0.5) {
             const sectionClass = elem.target.className;
             this.addActive(sectionClass);
           }
