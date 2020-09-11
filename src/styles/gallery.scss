@@ -11,10 +11,11 @@
       transition: all 0.5s;
     }
     &__item {
-      min-width: 600px;
       padding: 0 40px;
+      display: flex;
+      align-items: center;
       img {
-        height: 750px;
+        border-radius: 15px;
       }
     }
     &__nextBtn,
@@ -34,11 +35,19 @@
 }
 
 @media (max-width: 575px) {
-  .slider { 
-    &__item {
-      min-width: 360px !important;
-      img {
-        height: 300px !important;
+  .gallery {
+    .slider {
+      &__nextBtn,
+      &__prevBtn {
+        font-size: 25px;
+      }
+
+      &__nextBtn {
+        right: 5%;
+      }
+
+      &__prevBtn {
+        left: 5%;
       }
     }
   }
