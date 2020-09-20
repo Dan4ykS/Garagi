@@ -45,7 +45,12 @@ module.exports = (env = {}) => {
         new CopyPlugin({
           patterns: [{ from: './images', to: 'images' }],
         }),
-        new ImageminPlugin({ test: /\.(jpe?g|png|gif|svg)$/i })
+        new ImageminPlugin({
+          test: /\.(png|jpeg|gif|ico|jpg|svg)$/,
+          optipng: {
+            optimizationLevel: 7,
+          },
+        })
       );
     }
     return plugins;
