@@ -4,6 +4,7 @@ const miniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCssAssetWebpackPlugin = require('optimize-css-assets-webpack-plugin');
 const TerserWebpackPlugin = require('terser-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
+const ImageminPlugin = require('imagemin-webpack-plugin').default;
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = (env = {}) => {
@@ -43,7 +44,8 @@ module.exports = (env = {}) => {
         }),
         new CopyPlugin({
           patterns: [{ from: './images', to: 'images' }],
-        })
+        }),
+        new ImageminPlugin({ test: /\.(jpe?g|png|gif|svg)$/i })
       );
     }
     return plugins;
